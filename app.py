@@ -11,7 +11,6 @@ class Board:
         
     def reset_board(self): # resets the data in the board
         self.grid = []  
-
         for i in range(3):
             row = []
 
@@ -34,6 +33,22 @@ class Board:
         return False
     
     def check_win(self):
+        for row in self.grid:
+            if row[0] == row[1] == row[2] != " ":
+                return row[0]
+
+        for col in range(3):
+            if self.grid[0][col] == self.grid[1][col] == self.grid[2][col] != " ":
+                return self.grid[0][col]
+
+        if self.grid[0][0] == self.grid[1][1] == self.grid[2][2] != " ":
+            return self.grid[0][0]            
+
+        if self.grid[0][2] == self.grid[1][1] == self.grid[2][0] != " ":
+            return self.grid[0][2]
+
+        return None
+        
     def is_full(self):
 
 class Player:
