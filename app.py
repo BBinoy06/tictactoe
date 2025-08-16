@@ -1,5 +1,14 @@
 class Board:
     def __init__(self):
+        self.grid = []  
+
+        for i in range(3):
+            row = []
+
+            for j in range(3):
+                row.append(" ")
+                self.grid.append(row)
+        
     def reset_board(self):
     def place_mark(self, row, col, mark):
     def check_win(self):
