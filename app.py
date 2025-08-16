@@ -7,7 +7,7 @@ class Board:
 
             for j in range(3):
                 row.append(" ")
-                self.grid.append(row)
+            self.grid.append(row)
         
     def reset_board(self):
     def place_mark(self, row, col, mark):
