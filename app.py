@@ -10,6 +10,24 @@ class Board:
             self.grid.append(row)
         
     def reset_board(self):
+        self.grid = []  
+
+        for i in range(3):
+            row = []
+
+            for j in range(3):
+                row.append(" ")
+            self.grid.append(row)
+    def display_board(self):
+        for row_index in range(3):
+            row = self.grid[row_index]
+
+            print ("|".join(row))
+
+            if row_index < 2:
+                print ("--+---+--")
+
+            
     def place_mark(self, row, col, mark):
     def check_win(self):
     def is_full(self):
