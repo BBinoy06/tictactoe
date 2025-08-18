@@ -48,19 +48,26 @@ class Board:
             return self.grid[0][2]
 
         return None
-        
+
     def is_full(self):
+        for row in self.grid:
+            for cell in row:
+                if cell == " ":
+                    return False
+                return True
 
-class Player:
-    def __init__(self, name, mark):
-    def get_move(self, board):
 
-class Computer:
-    def __init__(self, mark):
-    def get_move(self, board):
+        
+#class Player:
+#    def __init__(self, name, mark):
+#    def get_move(self, board):
 
-class Game:
-    def __init__(self):
-    def switch_turn(self):
-    def is_over(self):
-    def play_turn(self):
+#class Computer:
+#    def __init__(self, mark):
+#    def get_move(self, board):
+
+#class Game:
+#    def __init__(self):
+#    def switch_turn(self):
+#    def is_over(self):
+#    def play_turn(self):
