@@ -58,9 +58,21 @@ class Board:
 
 
         
-#class Player:
-#    def __init__(self, name, mark):
-#    def get_move(self, board):
+class Player:
+    def __init__(self, name, mark):
+        self.name = name
+        self.mark = mark
+        
+
+    def get_move(self, board):
+        while True:
+            try:
+                move = input(f"{self.name} ({self.mark}), enter your move as row, col (0-2): ")
+                row, col = map(int, move.split(","))
+
+                if row in range(3) and col in range(3):
+                    if board.board[row][col] == " ":
+                        return
 
 #class Computer:
 #    def __init__(self, mark):
