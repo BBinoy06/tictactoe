@@ -72,7 +72,15 @@ class Player:
 
                 if row in range(3) and col in range(3):
                     if board.board[row][col] == " ":
-                        return
+                        return row, col
+                    else:
+                        print("Spot taken. Try again later")
+
+                else:
+                    print("Row and column must be between 0 and 2")
+
+            except ValueError:
+                print ("Invalid input. enter in this format: row, col(e.g., 1,2)")
 
 #class Computer:
 #    def __init__(self, mark):
