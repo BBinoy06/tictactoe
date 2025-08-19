@@ -71,7 +71,7 @@ class Player:
                 row, col = map(int, move.split(","))
 
                 if row in range(3) and col in range(3):
-                    if board.board[row][col] == " ":
+                    if board.grid[row][col] == " ":
                         return row, col
                     else:
                         print("Spot taken. Try again later")
