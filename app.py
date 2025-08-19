@@ -82,9 +82,9 @@ class Player:
             except ValueError:
                 print ("Invalid input. enter in this format: row, col(e.g., 1,2)")
 
-#class Computer:
-#    def __init__(self, mark):
-#    def get_move(self, board):
+class Computer:
+    def __init__(self, mark):
+    def get_move(self, board):
 
 #class Game:
 #    def __init__(self):
