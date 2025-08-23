@@ -126,3 +126,13 @@ class Game:
     
         self.switch_turn()
         return False
+
+
+if __name__ == "__main__":
+    game = Game()
+    print("Welcome to tictactoe")
+    game.board.display_board()
+
+    while not game.is_over():
+        if game.play_turn():
+            break
