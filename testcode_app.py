@@ -12,5 +12,10 @@ class TestPlayer(unittest.TestCase):
         self.assertEqual(player.name, "BB")
         self.assertEqual(player.mark, "X")
 
+class TestComputer(unittest.TestCase):
+    def test_computer_initialisation(self):
+        computer = Computer("O")
+        self.assertEqual(computer.mark, "O")
+
 if __name__ == "__main__":
     unittest.main()
