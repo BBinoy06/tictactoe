@@ -4,7 +4,7 @@ from app import Board, Player, Computer
 class TestBoard(unittest.TestCase):
     def test_board_initialisation(self):
         board = Board()
-        self.assertEqual(board.grid, [[" "] * 3 for _ in range(3)]
+        self.assertEqual(board.grid, [[" "] * 3 for _ in range(3)])
 
 class TestPlayer(unittest.TestCase):
     def test_player_initialistion(self):
