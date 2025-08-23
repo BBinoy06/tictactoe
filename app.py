@@ -92,8 +92,18 @@ class Computer:
         empty_cells = [(r, c) for r in range(3) for c in range(3) if board.grid[r][c] == " "]
         return random.choice(empty_cells)
         
-#class Game:
-#    def __init__(self):
-#    def switch_turn(self):
+class Game:
+    def __init__(self):
+        self.board = Board()
+        self.player1 = Player("B", "X")
+        self.player2 = Computer("O")
+        self.current_player = self.player1
+        
+    def switch_turn(self):
+        if self.current_player == self.player1:
+            self.current_player = self.player2
+        else:
+            self.current_player = self.player1
+        
 #    def is_over(self):
 #    def play_turn(self):
