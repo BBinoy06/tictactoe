@@ -1,5 +1,5 @@
 import unittest
-from app import Board, Player, Computer
+from app import Board, Player, Computer, Game
 
 class TestBoard(unittest.TestCase):
     def test_board_initialisation(self):
@@ -21,8 +21,15 @@ class TestGame(unittest.TestCase):
     def setUp(self):
         self.game = Game()
 
-    def test_initial_current_player(self):
+    def test_first_current_player(self):
         self.assertEqual(self.game.current_player, self.game.player1)
+
+    def test_switch_turn(self):
+        original_player = self.game.current_player
+        self.game.switch_turn()
+        self.assertNotEqual(self.game.current_player, original_player)
+        self.game.switch_turn()
+        self.assertEqual(self.game.current_player, original_player)
 
 
 if __name__ == "__main__":
