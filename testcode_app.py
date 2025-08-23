@@ -20,7 +20,10 @@ class TestComputer(unittest.TestCase):
 class TestGame(unittest.TestCase):
     def setUp(self):
         self.game = Game()
-        
+
+    def test_initial_current_player(self):
+        self.assertEqual(self.game.current_player, self.game.player1)
+
 
 if __name__ == "__main__":
     unittest.main()
