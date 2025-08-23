@@ -1,3 +1,5 @@
+import random
+
 class Board:
     def __init__(self):
         self.grid = []  
@@ -84,8 +86,12 @@ class Player:
 
 class Computer:
     def __init__(self, mark):
+        self.mark = mark
+        
     def get_move(self, board):
-
+        empty_cells = [(r, c) for r in range(3) for c in range(3) if board.grid[r][c] == " "]
+        return random.choice(empty_cells)
+        
 #class Game:
 #    def __init__(self):
 #    def switch_turn(self):
