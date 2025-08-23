@@ -105,5 +105,24 @@ class Game:
         else:
             self.current_player = self.player1
         
-#    def is_over(self):
-#    def play_turn(self):
+    def is_over(self):
+        if self.board.check_win() is not None:
+            return True
+        if self.board.is_full():
+            return True
+        return False
+    
+    def play_turn(self):
+        row, col = self.current_player.get_move(self.board)
+        self.board.place_mark(row, col, self.current_player.mark)
+        self.board.display_board()
+
+        if self.board.check_win():
+            print(f"{self.current_player.mark} wins!")
+            return True
+        elif self.board.is_full():
+            print("It's a draw!")
+            return True
+    
+        self.switch_turn()
+        return False
