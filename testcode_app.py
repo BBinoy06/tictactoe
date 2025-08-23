@@ -31,6 +31,10 @@ class TestGame(unittest.TestCase):
         self.game.switch_turn()
         self.assertEqual(self.game.current_player, original_player)
 
+    def test_is_over_empty_board(self):
+        self.assertFalse(self.game.board.is_full())
+        self.assertIsNone(self.game.board.check_win())
+
 
 if __name__ == "__main__":
     unittest.main()
