@@ -20,10 +20,9 @@ class Board:
                 row.append(" ")
             self.grid.append(row)
     def display_board(self): # prints the separators
+        print("\n   0   1   2")
         for row_index, row in enumerate(self.grid):
-
             print ("|".join(row))
-
             if row_index < 2:
                 print ("---------")
             
