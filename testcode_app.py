@@ -35,6 +35,25 @@ class TestGame(unittest.TestCase):
         self.assertFalse(self.game.board.is_full())
         self.assertIsNone(self.game.board.check_win())
 
+    def test_win_condition(self):
+        self.game.board.grid = [
+            ["X", "X", "X"],
+            [" ", "O", " "],
+            ["O", " ", " "]
+        ]
+        self.assertEqual(self.game.board.check_win(), "X")
+        self.assertTrue(self.game.is_over())
+
+    def test_draw_condition(self):
+        self.game.board.grid = [
+            ["X", "O", "X"],
+            ["X", "X", "O"],
+            ["O", "X", "O"]
+        ]
+        self.assertIsNone(self.game.board.check_win())
+        self.assertTrue(self.game.board.is_full())
+        self.assertTrue(self.game.is_over())
+
 
 if __name__ == "__main__":
     unittest.main()
