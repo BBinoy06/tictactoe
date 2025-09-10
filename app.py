@@ -20,13 +20,12 @@ class Board:
                 row.append(" ")
             self.grid.append(row)
     def display_board(self): # prints the separators
-        for row_index in range(3):
-            row = self.grid[row_index]
+        for row_index, row in enumerate(self.grid):
 
             print ("|".join(row))
 
             if row_index < 2:
-                print ("--+---+--")
+                print ("---------")
             
     def place_mark(self, row, col, mark): # checks if chosen one is empty and if it is marks it
         if self.grid[row][col] == " ":
@@ -56,7 +55,7 @@ class Board:
             for cell in row:
                 if cell == " ":
                     return False
-                return True
+        return True
 
 
         
