@@ -22,9 +22,10 @@ class Board:
     def display_board(self): # prints the separators
         print("\n   0   1   2")
         for row_index, row in enumerate(self.grid):
-            print ("|".join(row))
+            print(f"{row_index}  " + " | ".join(row))
             if row_index < 2:
-                print ("---------")
+                print ("  ---+---+---")
+        print()
             
     def place_mark(self, row, col, mark): # checks if chosen one is empty and if it is marks it
         if self.grid[row][col] == " ":
