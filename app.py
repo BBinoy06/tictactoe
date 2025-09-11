@@ -89,19 +89,19 @@ class Computer:
         self.difficulty = difficulty
 
     def evaluate(self, board, noMoves):
-    winner = board.check_win()
-    if winner == self.mark:
-        return 10 - noMoves
-    elif winner == self.opponent:
-        return -10 + noMoves
-    return 0
+        winner = board.check_win()
+        if winner == self.mark:
+            return 10 - noMoves
+        elif winner == self.opponent:
+            return -10 + noMoves
+        return 0
 
     def minimax(self, board, noMoves):
         score = self.evaluate(board, noMoves)
         if score != 0:
             return score
         if board.is_full():
-            return == 0
+            return 0
         
     def get_move(self, board):
         empty_cells = [(r, c) for r in range(3) for c in range(3) if board.grid[r][c] == " "]
