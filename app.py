@@ -84,12 +84,24 @@ class Player:
                 print ("Invalid input. enter in this format: row, col(e.g., 1,2)")
 
 class Computer:
-    def __init__(self, mark):
+    def __init__(self, mark, difficulty="easy"):
         self.mark = mark
+        self.difficulty = difficulty
         
     def get_move(self, board):
         empty_cells = [(r, c) for r in range(3) for c in range(3) if board.grid[r][c] == " "]
-        return random.choice(empty_cells)
+
+        if self.difficulty == "easy":
+            return random.choice(empty_cells)
+
+        if self.difficulty == "medium":
+            for (r, c) in empty_cells:
+                board.grid[r][c] = self.mark
+                if board.check_win() ==self.mark
+
+        if self.difficulty == "hard":
+            return
+    
         
 class Game:
     def __init__(self):
@@ -128,8 +140,15 @@ class Game:
 
 
 if __name__ == "__main__":
-    game = Game()
+    
     print("Welcome to tictactoe")
+
+    difficulty = input("Choose difficulty (easy/medium/hard): ").lower()
+
+    game = Game()
+
+    game.player2 = Computer("O", difficulty)
+    
     game.board.display_board()
 
     while not game.is_over():
