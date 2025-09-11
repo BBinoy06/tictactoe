@@ -102,6 +102,14 @@ class Computer:
                     return r, c
                 board.grid[r][c] = " "
 
+            opponent = "X" if self.mark == "O" else "O"
+            for r,c in empty_cells:
+                board.grid[r][c] = opponent
+                if board.check_win() == opponent:
+                    board.grid[r][c] = " "
+                    return r,c
+                board.grid[r][c] = " "
+
             return random.choice(empty_cells)
 
         if self.difficulty == "hard":

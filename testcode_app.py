@@ -65,6 +65,15 @@ class TestGame(unittest.TestCase):
         move = self.computer.get_move(self.board)
         self.assertEqual(move, (0, 2))
 
+    def testingMedium_ifAiBlocksIfPossible(self):
+        self.board.grid = [
+            ["O", " ", " "],
+            ["X", "X", " "],
+            ["O", " ", " "]
+        ]
+        move = self.computer.get_move(self.board)
+        self.assertEqual(move, (1, 2))
+        
     def testingMedium_ifRandomWhenWinNorBlock(self):
         self.board.grid = [
             ["X", "O", "X"],
