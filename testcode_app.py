@@ -20,6 +20,8 @@ class TestComputer(unittest.TestCase):
 class TestGame(unittest.TestCase):
     def setUp(self):
         self.game = Game()
+        self.board = Board()
+        self.computer = Computer("O",difficulty="medium")
 
     def test_first_current_player(self):
         self.assertEqual(self.game.current_player, self.game.player1)
@@ -54,6 +56,12 @@ class TestGame(unittest.TestCase):
         self.assertTrue(self.game.board.is_full())
         self.assertTrue(self.game.is_over())
 
+    def testingMedium_ifAiWinsIfPossible(self):
+        self.board.grid = [
+            ["O", "O", " "],
+            ["X", "X", " "],
+            [" ", " ", " "]
+        ]
 
 if __name__ == "__main__":
     unittest.main()
