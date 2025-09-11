@@ -72,7 +72,7 @@ class TestGame(unittest.TestCase):
             [" ", " ", " "]
         ]
         move = self.computer.get_move(self.board)
-        self.assertEqual(move, [(2, 0), (2, 1), (2, 2)])
+        self.assertIn(move, [(2, 0), (2, 1), (2, 2)])
 
 if __name__ == "__main__":
     unittest.main()
