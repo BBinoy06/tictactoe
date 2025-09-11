@@ -97,7 +97,12 @@ class Computer:
         if self.difficulty == "medium":
             for (r, c) in empty_cells:
                 board.grid[r][c] = self.mark
-                if board.check_win() ==self.mark
+                if board.check_win() ==self.mark:
+                    board.grid[r][c] = " "
+                    return r, c
+                board.grid[r][c] = " "
+
+            return random.choice(empty_cells)
 
         if self.difficulty == "hard":
             return
